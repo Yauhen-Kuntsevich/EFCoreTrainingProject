@@ -1,0 +1,6 @@
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "${DB_CONNECTION}"
+  },
+  "AllowedHosts": "*"
+}
