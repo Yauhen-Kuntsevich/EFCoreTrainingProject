@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace EFCoreTrainingProject.Models;
+﻿namespace EFCoreTrainingProject.Models;
 
 public class Customer
 {

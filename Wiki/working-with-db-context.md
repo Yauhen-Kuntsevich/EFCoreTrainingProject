@@ -2,10 +2,12 @@
 
 ## Add entities to the database:
 
-```
+```C#
 using EFCoreTrainingProject.Data;
 using EFCoreTrainingProject.Models;
 
+// "using" here is about external (outside .NET) resources managment
+// Auto-calling of Dispose() method defined in IDisposable
 using SuperPizzaContext context = new SuperPizzaContext();
 
 Product veggieSpecial = new Product()
@@ -28,7 +30,7 @@ context.SaveChanges();
 
 ## Find something in the database with API:
 
-```
+```C#
 using EFCoreTrainingProject.Data;
 using EFCoreTrainingProject.Models;
 
@@ -47,7 +49,7 @@ foreach (var p in products)
 
 ## To find something in the database with LINQ:   
 
-```
+```C#
 using EFCoreTrainingProject.Data;
 using EFCoreTrainingProject.Models;
 
@@ -69,7 +71,7 @@ foreach (var p in products)
 
 ## To change entity in the database:
 
-```
+```C#
 using EFCoreTrainingProject.Data;
 using EFCoreTrainingProject.Models;
 
@@ -102,7 +104,7 @@ foreach (var p in products)
 
 ## To remove entity from the database:
 
-```
+```C#
 using EFCoreTrainingProject.Data;
 using EFCoreTrainingProject.Models;
 
