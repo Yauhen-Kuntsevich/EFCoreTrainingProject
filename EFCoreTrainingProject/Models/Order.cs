@@ -1,12 +1,27 @@
-﻿namespace EFCoreTrainingProject.Models;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
-public class Order
+namespace EFCoreTrainingProject.Models;
+
+[Index("CustomerId", Name = "IX_Orders_CustomerId")]
+public partial class Order
 {
+    [Key]
     public int Id { get; set; }
+
     public DateTime OrderPlaced { get; set; }
+
     public DateTime? OrderFulFilled { get; set; }
+
     public int CustomerId { get; set; }
 
-    public Customer Customer { get; set; } = null!;
-    public ICollection<OrderDetail> OrderDetails { get; set; } = null!;
+    [ForeignKey("CustomerId")]
+    [InverseProperty("Orders")]
+    public virtual Customer Customer { get; set; } = null!;
+
+    [InverseProperty("Order")]
+    public virtual ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
 }
